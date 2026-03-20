@@ -1,0 +1,16 @@
+aru:
+  address: build.rule.validate.LayerDeps
+  file: src/LayerRule.php
+  layer: L1_ATOM
+  type: rule
+  description: Validates that a component does not depend on a higher layer.
+  depends_on:
+    - build.ComponentDescriptor
+    - build.ComponentName
+    - build.BuildError
+  scenarios:
+    - LayerRule passes when component depends on a lower layer
+    - LayerRule passes when component depends on the same layer
+    - LayerRule fails with LAYER_VIOLATION when depending on a higher layer
+    - LayerRule passes when a component has no dependencies
+    - LayerRule fails with INVALID_COMPONENT for an unknown dependency

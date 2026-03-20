@@ -7,10 +7,10 @@ namespace Touta\Aria\Build;
 final readonly class ComponentDescriptor
 {
     /**
-     * @param list<string> $dependencies
+     * @param list<ComponentName> $dependencies
      */
     public function __construct(
-        public string $name,
+        public ComponentName $name,
         public Layer $layer,
         public array $dependencies = [],
     ) {}

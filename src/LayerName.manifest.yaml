@@ -1,0 +1,10 @@
+aru:
+  address: build.LayerName
+  file: src/LayerName.php
+  layer: L0_PRIMITIVE
+  type: branded-type
+  description: Branded string wrapper for layer names.
+  scenarios:
+    - LayerName wraps a string via factory method
+    - Two LayerNames with the same string are equal
+    - Two LayerNames with different strings are not equal

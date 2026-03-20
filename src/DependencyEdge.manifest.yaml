@@ -1,0 +1,10 @@
+aru:
+  address: build.DependencyEdge
+  file: src/DependencyEdge.php
+  layer: L0_PRIMITIVE
+  type: value-object
+  description: Directed dependency relationship between two ComponentNames.
+  scenarios:
+    - DependencyEdge wraps a from→to component relationship
+    - Two DependencyEdges with the same from/to are equal
+    - DependencyEdges with swapped from/to are not equal

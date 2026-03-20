@@ -1,0 +1,10 @@
+aru:
+  address: build.ComponentName
+  file: src/ComponentName.php
+  layer: L0_PRIMITIVE
+  type: branded-type
+  description: Branded string wrapper for component names.
+  scenarios:
+    - ComponentName wraps a string via factory method
+    - Two ComponentNames with the same string are equal
+    - Two ComponentNames with different strings are not equal

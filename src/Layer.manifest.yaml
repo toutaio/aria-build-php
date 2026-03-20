@@ -1,0 +1,11 @@
+aru:
+  address: build.Layer
+  file: src/Layer.php
+  layer: L0_PRIMITIVE
+  type: enum
+  description: Six-tier layer enum (L0–L5) with ordinal comparison.
+  scenarios:
+    - Layer enum has exactly 6 cases
+    - Layer enum contains L0 through L5
+    - Layer ordinals match their numeric tier
+    - Lower layers have smaller ordinals than higher layers

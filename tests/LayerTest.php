@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 use Touta\Aria\Build\Layer;
 
+// Scenario: Layer enum has exactly 6 cases
 it('has all 6 layers', function (): void {
     $cases = Layer::cases();
 
     expect($cases)->toHaveCount(6);
 });
 
+// Scenario: Layer enum contains L0 through L5
 it('contains L0 through L5', function (): void {
     expect(Layer::L0_PRIMITIVE)->toBeInstanceOf(Layer::class)
         ->and(Layer::L1_ATOM)->toBeInstanceOf(Layer::class)
@@ -19,6 +21,7 @@ it('contains L0 through L5', function (): void {
         ->and(Layer::L5_DOMAIN)->toBeInstanceOf(Layer::class);
 });
 
+// Scenario: Layer ordinals match their numeric tier
 it('assigns correct ordinal values', function (): void {
     expect(Layer::L0_PRIMITIVE->ordinal())->toBe(0)
         ->and(Layer::L1_ATOM->ordinal())->toBe(1)
@@ -28,6 +31,7 @@ it('assigns correct ordinal values', function (): void {
         ->and(Layer::L5_DOMAIN->ordinal())->toBe(5);
 });
 
+// Scenario: Lower layers have smaller ordinals than higher layers
 it('orders lower layers below higher layers', function (): void {
     $layers = Layer::cases();
 

@@ -11,7 +11,7 @@ final class DependencyGraph
 
     public function addComponent(ComponentDescriptor $component): void
     {
-        $this->components[$component->name] = $component;
+        $this->components[$component->name->value] = $component;
     }
 
     public function hasCycle(): bool
@@ -47,11 +47,11 @@ final class DependencyGraph
 
         if ($component !== null) {
             foreach ($component->dependencies as $dep) {
-                if (($state[$dep] ?? null) === 'visiting') {
+                if (($state[$dep->value] ?? null) === 'visiting') {
                     return true;
                 }
 
-                if (!isset($state[$dep]) && $this->dfs($dep, $state)) {
+                if (!isset($state[$dep->value]) && $this->dfs($dep->value, $state)) {
                     return true;
                 }
             }

@@ -1,0 +1,15 @@
+aru:
+  address: build.graph.validate.Cycles
+  file: src/DependencyGraph.php
+  layer: L1_ATOM
+  type: graph
+  description: Directed dependency graph with DFS-based cycle detection.
+  depends_on:
+    - build.ComponentDescriptor
+    - build.ComponentName
+  scenarios:
+    - Empty graph has no cycle
+    - Linear dependency chain has no cycle
+    - Direct A→B→A cycle is detected
+    - Indirect A→B→C→A cycle is detected
+    - All added components are retrievable

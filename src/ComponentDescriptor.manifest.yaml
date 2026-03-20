@@ -1,0 +1,12 @@
+aru:
+  address: build.ComponentDescriptor
+  file: src/ComponentDescriptor.php
+  layer: L0_PRIMITIVE
+  type: value-object
+  description: Immutable descriptor binding a ComponentName to a Layer and its dependency list.
+  scenarios:
+    - ComponentDescriptor can be constructed with branded types
+    - ComponentDescriptor exposes its ComponentName
+    - ComponentDescriptor exposes its Layer
+    - ComponentDescriptor exposes its dependency list as ComponentName[]
+    - ComponentDescriptor defaults to empty dependencies

@@ -1,0 +1,12 @@
+aru:
+  address: build.BuildError
+  file: src/BuildError.php
+  layer: L0_PRIMITIVE
+  type: domain-error
+  description: Domain-typed error for the build package with LAYER_VIOLATION, CYCLE_DETECTED, and INVALID_COMPONENT codes.
+  scenarios:
+    - BuildError is created with code and message
+    - BuildError is created with context
+    - withMessage returns a new BuildError with updated message
+    - withContext returns a new BuildError with merged context
+    - BuildError error code constants are correctly prefixed
